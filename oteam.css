@@ -10,6 +10,14 @@ body {
     background-color: #f9e5d7
 }
 
+.float-right {
+    float: left;
+    text-align: center;
+    font-size: 17px;
+}
+.hidden {
+    display: none;
+}
 .oteam-nav {
     font-size: 24px !important;
     font-family: Arial, Helvetica, sans-serif !important;
@@ -22,8 +30,31 @@ body {
     margin-left: 10px;
 }
 
+.nav-item {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
 .nav-item:hover {
-    transform: scale(1.05);
+    
+    color: #000;
+    font-weight: 500;
+}
+.nav-item::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover::before {
+    transform: scaleX(1);
 }
 
 .logoimg {

@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
 
-    <link href="/TherapistProfile.css" rel="stylesheet">
+    <link href="oteam.css" rel="stylesheet">
+    <link href="login.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 
@@ -18,7 +19,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg shadow-lg">
         <div class="container-fluid">
-          <img src="/img/logo.png" alt="" class="logoimg">
+          <img src="img/logo.png" alt="" class="logoimg">
             <span class="oteam-nav d-flex justify-content-center">
                 OTeam
             </span>
@@ -26,44 +27,69 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="oteam-nav-menu collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Resources</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Amazon Links</a>
-              </li>
-            </ul>
+            <div id="nav-list-item" class="hidden">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Resources</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Amazon Links</a>
+                </li>
+              </ul>
+            </div>
+            
           </div>
+          <span id="log-out-button" class="float-right hidden">
+            <button class="btn btn-danger" onclick="LogOut()">Log Out</button>
+          </span>
         </div>
       </nav>
-      
+      <!-- END NAVBAR -->
 
-<div class="container test-body mt-5">
-    
+
+
+<!-- LOGIN -->
+
+<div id="login-section" class="">
+  <section class="vh-100" style="background-color: #79a6a3;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-lg" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <img src="img/NewLogo.png" alt="" class="loginlogo">
+  
+              <div class="form-outline mb-4">
+                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX-2">Email</label>
+              </div>
+  
+              <div class="form-outline mb-4">
+                <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+                <label class="form-label" for="typePasswordX-2">Password</label>
+              </div>
+  
+              <button class="btn btn-primary btn-lg btn-block shadow" onclick="LogIn()">Login</button>      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
-
-<!-- <div class="team-single">
-  <div class="row">
-      <div class="col-3 xs-margin-30px-bottom">
-          <div class="team-single-img d-flex justify-content-center mb-4">
-              <img src="img/profile_placeholder.jpg" alt="" class="profile-pic rounded-circle shadow-lg">
-          </div>
-
-         
+<!-- END LOGIN -->
 
 
-          
-      </div>
-  </div>
-  <div class="col-7">
-    
-  </div>
-</div> -->
+<!-- PROFILE -->
+
+<div id="profile-section" class="hidden">
+  <div class="container test-body mt-5"></div>
+
 <div class="row justify-content-center">
 
   <div class="col-3">
@@ -74,21 +100,11 @@
       <hr>
       <h5>Active Caseload: <strong>5</strong></h5>
       <h5>Unresolved Messages: <strong>3</strong></h5>
-      <div class="margin-20px-top team-single-icons">
-          <!-- <ul class="no-margin">
-              <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="javascript:void(0)"><i class="fab fa-google-plus-g"></i></a></li>
-              <li><a href="javascript:void(0)"><i class="fab fa-instagram"></i></a></li>
-          </ul> -->
-      </div>
   </div>
   </div>
   
 
 <div class="col-7">
-  <!-- <h2 class="display-2">CaseLoad</h2>
-  <hr> -->
     <div class="table-responsive rounded">
         <table style="text-align:center" class="table table-striped table-hover table-light border-dark shadow">
           <thead>
@@ -146,13 +162,15 @@
 </div>
 <div class="d-flex flex-row-reverse">
   <button type="button" class="btn btn-primary buttonSpace shadow">Add Client</button>
-<button type="button" class="btn btn-danger shadow">Delete Client</button>
 </div>
 
 </div>
 
 </div>
-      
+</div>
+
+<!-- END PROFILE -->
+    <script src="oteam.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>
