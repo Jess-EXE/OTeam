@@ -13,6 +13,7 @@ function LogOut() {
     logOutButton.classList.add("hidden");
     navItems.classList.add("hidden");
     homeNavLink.classList.remove("active");
+    interventionSection.classList.add("hidden");
 }
 
 function LogIn() {
